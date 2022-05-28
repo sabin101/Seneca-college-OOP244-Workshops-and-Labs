@@ -1,0 +1,27 @@
+/*
+*****************************************************************************
+                              reflect.txt
+Full Name  : Aryan Khurana
+Student ID#: 145282216
+Email      : akhurana22@myseneca.ca
+Date of completion    : 26 May 2022
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop helped me to learn many concepts such as Dynamic Memory allocation and References. I learnt how we can store the data that we read from CSV files in dynamically allocated array of structs. I also dynamically allocated memory to store strings in the struct.
+
+The main problem that I faced in my code was a memory leak because i was deallocating more memory than I allocated. To solve this I just changed the limit.
+
+Erroneous Code: Tries to deallocate memory for an array of structs which stores all records in the file
+for (i = 0; i < noOfEmployees; i++) {
+    delete[] employees[i].employeeName;
+}
+
+Corrected Code: Only deallocates memory for the array of structs which stores the records where month was matched
+for (i = 0; i < monthMatches; i++) {
+    delete[] employees[i].employeeName;
+}
+
+I also faced a segmentation faults but the professor helped me with it. I faced the fault because I was accessing memory which was out of the range of the array.
