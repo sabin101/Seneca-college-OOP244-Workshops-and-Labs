@@ -1,0 +1,49 @@
+{mc} When a C program starts, the function that gets executed is called ________
+[ ] principal
+[X] main
+[ ] function
+[ ] func
+[ ] program
+
+
+{mc} A C program can have only one function.
+[ ] True
+[X] False
+
+
+{ma} From the following sentences, select one that is correct:
+[ ] Any correct code in C is also correct in C++
+[X] C source code can be organized into modules
+[X] C++ augments C with object oriented features
+[ ] Namespaces are a feature available in C and C++
+[ ] There is no difference between "++i" and "i++"
+[X] Abstraction is a characteristic that is common to ALL programming languages, regardless of their OOP status.
+
+
+{mc} The stages of compilation in C++ are ________
+[ ] compile, debug, linking
+[ ] preprocess, compile, debug
+[ ] translate, preprocess, linking,
+[X] compile, preprocess, linking
+[ ] analize, translate, verify
+[ ] debug, debug, debug
+
+
+{mc} In C, the function "fopen" is used for ________
+[ ] open a web address
+[X] open a file
+[ ] open a database
+[ ] open a module in VS editor
+[ ] there is no such function in C
+
+
+{mc} What does 'std::printf("Hello\n")' means in C++?
+[ ] nothing, the syntax is not correct
+[ ] call the function "std" and pass "printf" as parameter
+[ ] insert the text "Hello" into a file
+[X] print the text "Hello" to the screen
+
+
+{mc} C++ is a strongly typed language
+[X] True
+[ ] False

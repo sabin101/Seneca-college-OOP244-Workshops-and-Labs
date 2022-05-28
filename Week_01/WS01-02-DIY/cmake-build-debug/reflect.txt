@@ -1,0 +1,29 @@
+/*
+*****************************************************************************
+                              reflect.txt
+Full Name  : Aryan Khurana
+Student ID#: 145282216
+Email      : akhurana22@myseneca.ca
+Date of completion    : 23 May 2022
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+This workshop gave me an opportunity to revise all the concepts that I learnt last semester as a part of IPC144. Concepts such structs, arrays and file handling were made very clear through this workshop.
+
+The main difficulty that I faced was while doing the 'loadQuiz()' function. This is because I had to read the whole file and had to differentiate between questions and answers. I also had to make sure that I keep an account of the right answers while storing data so I could validate user input later in the program. To solve this, I used index numbers to keep track of the right answer.
+
+// Struct to store the answer details for a multiple choice question
+struct MCAnswerDetails {
+    char answers[MAX_ANSWERS][ANSWER_TEXT];
+    int rightAnswerIndex;
+};
+
+// Struct to store the answer details for a multiple answer question
+struct MAAnswerDetails {
+    char answers[MAX_ANSWERS][ANSWER_TEXT];
+    int rightAnswerIndexes[MAX_ANSWERS];
+};
+
+As thee multiple answer questions could have had more than  one correct answer, I used an array to store the indexes of the right answers.
