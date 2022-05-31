@@ -1,0 +1,23 @@
+/*
+*****************************************************************************
+                              reflect.txt
+Full Name  : Aryan Khurana
+Student ID#: 145282216
+Email      : akhurana22@myseneca.ca
+Date of completion    : 31 May 2022
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+Firstly, this workshop helped me to understand the concepts related to classes, member functions and how privacy works in C++. I used getters and setters throughout this workshop and understood how we can control the access that various members have in a class. This is something which provides us so much more control when compared to using structures as we did in IPC144. Secondly, this workshop also helped me to revise concepts such as dynamic memory allocation and modular programming.
+
+The main problem that I faced in this workshop was adding const in front of getters. Due to this, I was unable to access member functions inside the functions that had const in front of it. To solve this issue, I researched on the internet and found that I have to use const in front of all the getters so that they are not able to change private values in the class. Once I used const in front of all getters, I was able to call one getter function inside the other which was giving an error earlier.
+
+Earlier code: This did not allow me to call areBarsValid() in draw()
+bool areBarsValid();
+void draw() const;
+
+Corrected code: This allowed me to call areBarsValid() in draw()
+bool areBarsValid() const;
+void draw() const;
