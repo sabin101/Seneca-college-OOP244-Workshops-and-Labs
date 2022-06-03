@@ -4,7 +4,7 @@
 Full Name  : Aryan Khurana
 Student ID#: 145282216
 Email      : akhurana22@myseneca.ca
-Date of completion    : 30 May 2022
+Date of completion    : 02 June 2022
 
 I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 *****************************************************************************
@@ -61,23 +61,12 @@ namespace sdds {
 
     // This query returns true if the Army object is in a safe empty state
     bool Army::isEmpty() const {
-        bool result = false;
-        if (strcmp(nationality, "") == 0 && noOfUnits == 0) {
-            result = true;
-        }
-
-        return result;
+        return (strcmp(nationality, "") == 0 && noOfUnits == 0);
     }
 
     // This function returns true if the Army has more power than the incoming Army
     bool Army::isStrongerThan(const Army& army) const {
-        bool result = false;
-
-        if (power > army.power) {
-            result = true;
-        }
-
-        return result;
+        return (power > army.power);
     }
 
     // This function will force both armies to fight
