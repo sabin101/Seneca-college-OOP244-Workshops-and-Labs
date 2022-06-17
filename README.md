@@ -8,8 +8,8 @@ This repository contains all the OOP244 (Object Oriented Programming) workshops,
 - WS02-02-DIY: 10/10
 - WS03-01-LAB: 10/10
 - WS03-02-DIY: 10/10
-- WS04-01-LAB: Not Released
-- WS04-02-DIY: Not Released
+- WS04-01-LAB: 10/10
+- WS04-02-DIY: 10/10
 
 <!-- ### POINTS TO NOTE -->
 
