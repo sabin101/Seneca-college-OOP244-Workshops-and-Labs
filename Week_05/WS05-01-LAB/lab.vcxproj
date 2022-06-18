@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e8e228cf-df0c-4633-96a6-47afec7fe3c6}</ProjectGuid>
+    <ProjectGuid>{c8ec07d0-434c-427a-be82-c9731f4fd258}</ProjectGuid>
     <RootNamespace>lab</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -139,11 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Car.h" />
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="Chapter.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Car.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="Chapter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
