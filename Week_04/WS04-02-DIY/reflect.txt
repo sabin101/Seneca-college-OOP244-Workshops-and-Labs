@@ -1,0 +1,42 @@
+
+*****************************************************************************
+                              reflect.txt
+Full Name  : Aryan Khurana
+Student ID#: 145282216
+Email      : akhurana22@myseneca.ca
+Date of completion    : 11 June 2022
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+Through this workshop, I was able to strengthen my knowledge of default constructors, overloaded constructors and destructors. I understood how we initialize object instances using constructors and deallocate memory when the object goes out of scope using destructors. This workshop also helped me revise previously taught concepts such as dynamic memory allocation and output formatting.
+
+I faced memory leaks in this workshop while I was trying to swap objects to sort the values using a temporary CleanerBot class instance. This was because I was assigning the object to the temporary object using the assignment operator which doesn’t account for the dynamically allocated memory. To correct this, I used the setter functions that I had defined earlier in the program to assign values.
+
+Previous Code:
+void sort(CleanerBot* bot, short num_bots) {
+    int i, j;
+    CleanerBot temp_bot;
+    for (i = 0; i < num_bots; i++) {
+        for (j = 1; j < num_bots; j++) {
+            if (bot[j].getBattery() > bot[j -1].getBattery()) {
+                temp_bot = bot[j - 1];
+                bot[j] = bot[j - 1];
+                bot[j - 1] = bot[j];
+            }
+        }
+    }
+}
+
+Corrected Code:
+void sort(CleanerBot* bot, short num_bots) {
+    int i, j;
+    for (i = 0; i < num_bots; i++) {
+        for (j = 1; j < num_bots; j++) {
+            if (bot[j].getBattery() > bot[j - 1].getBattery()) {
+                CleanerBot temp_bot(bot[j].getLocation(), bot[j].getBattery(), bot[j].getBrush(), bot[j].isActive());
+                bot[j].set(bot[j - 1].getLocation(), bot[j - 1].getBattery(), bot[j - 1].getBrush(), bot[j - 1].isActive());
+                bot[j - 1].set(temp_bot.getLocation(), temp_bot.getBattery(), temp_bot.getBrush(), temp_bot.isActive());
+            }
+        }
