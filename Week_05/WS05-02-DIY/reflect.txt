@@ -1,0 +1,58 @@
+/*
+*****************************************************************************
+                              reflect.txt
+Full Name  : Aryan Khurana
+Student ID#: 145282216
+Email      : akhurana22@myseneca.ca
+Date of completion    : 19 June 2022
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+I learnt operator overloading in this workshop. I learned how to overload members, helpers, binary and unary operators and many more concepts such as overloading when you are dealing with dynamic memory allocation for arrays.
+The main problem that I faced was in the DIY. As the power array was dynamically allocated, I couldn't add the power to the array without memory leaks at first. If I tried to allocate memory again, all of the previously held memory was lost. The professor helped me solve this question that I had. To solve this, I created a temporary array with one size bigger. Then, I copied the old array to temp and added the new power to temp. After this, I deallocated memory for the old array and then reallocated with new size.
+
+Earlier function which did not increase the size of the array:
+
+    Hero& Hero::operator+=(Power& power) {
+        add_power(&power);
+        return *this;
+    }
+    int Hero::add_power(Power* power) {
+        powers[number_of_powers] = *power;
+        number_of_powers++;
+        power_level = calculatePowerLevel();
+        return 1;
+    }
+
+Newer and modified function
+    Hero& Hero::operator+=(Power& power) {
+        add_power(&power);
+        return *this;
+    }
+    int Hero::add_power(Power* power) {
+        // Creating a temporary array with one extra element and copying the items from powers array to the temporary one
+        Power temp[number_of_powers + 1];
+        int i;
+        for (i = 0; i < number_of_powers; i++) {
+            temp[i] = powers[i];
+        }
+
+        // Adding new power to temp array
+        temp[number_of_powers] = *power;
+        number_of_powers++;
+
+        // Deallocating and reallocating memory for the powers array
+        deallocate();
+        powers = new Power[number_of_powers + 1];
+
+        // Copying items from temp array to powers
+        for (i = 0; i < number_of_powers + 1; i++) {
+            powers[i] = temp[i];
+        }
+
+        // Calculating the power level
+        power_level = calculatePowerLevel();
+        return 1;
+    }
