@@ -1,0 +1,45 @@
+/*
+*****************************************************************************
+                              reflect.txt
+Full Name  : Aryan Khurana
+Student ID#: 145282216
+Email      : akhurana22@myseneca.ca
+Date of completion    : 8 July 2022
+
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*****************************************************************************
+*/
+
+While completing this workshop, I grew comfortable with overloading operators and file handling. I overloaded copy assignment operator, insertion operators and many more of them which helped me to practice all of these concepts. Also, I used ifstream and ofstream objects to read from files and write to files which is something different in contrast to reading and writing to the terminal which is what we normally do.
+
+The main problem that I faced in this workshop was while overloading the += operator. Even though all my concepts were clear, I was facing a very minor issue which took me a long time to solve. Basically, I was assigning the new struct to an index which was out of the range of the array. I had to subtract one from the index that I was using earlier to correct the error. Apart from that, I believe the workshop was pretty straight forward and I got to learn and practice a lot.
+
+Erroneous Code:
+Basket& Basket::operator+=(Fruit fruit) {
+    Fruit* temp = new Fruit[m_cnt + 1];
+    int i;
+    for (i = 0; i < m_cnt; i++) {
+        temp[i] = m_fruits[i];
+    }
+    m_cnt++;
+    temp[m_cnt] = fruit; // Erroneous Line
+    delete[] m_fruits;
+    m_fruits = temp;
+
+    return *this;
+}
+
+Corrected Code:
+Basket& Basket::operator+=(Fruit fruit) {
+    Fruit* temp = new Fruit[m_cnt + 1];
+    int i;
+    for (i = 0; i < m_cnt; i++) {
+        temp[i] = m_fruits[i];
+    }
+    m_cnt++;
+    temp[m_cnt - 1] = fruit; // Corrected Line
+    delete[] m_fruits;
+    m_fruits = temp;
+
+    return *this;
+}
